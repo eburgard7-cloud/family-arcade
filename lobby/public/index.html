@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#17113a">
+  <title>Family Arcade</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/bungee.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/bungee-inline.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/lexend.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/app.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#minecraft">Skip to joining Minecraft</a>
+
+  <header class="hero" id="top">
+    <div class="bar">
+      <div class="wrap bar-inner">
+        <a class="brand" href="#top">
+          <svg class="fish" viewBox="0 0 48 32" aria-hidden="true"><path d="M4 16c6-10 18-13 28-8l10-6v28l-10-6C22 29 10 26 4 16Z"/><circle cx="13" cy="14" r="2.4"/></svg>
+          <span data-bind="site_name">Finsonly Family Arcade</span>
+        </a>
+        <nav aria-label="Sections">
+          <a href="#minecraft">Minecraft</a>
+          <a href="#gameroom">Game room</a>
+          <a href="#nights">Events</a>
+          <a href="#rules">Rule book</a>
+          <a href="#grownups">Grown-ups</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="garland" aria-hidden="true"></div>
+
+    <div class="wrap hero-body">
+      <p class="notice notice-maint" id="maint-banner" role="status" hidden></p>
+      <a class="notice notice-event" id="event-banner" href="#nights" hidden></a>
+
+      <div class="marquee" id="marquee">
+        <div class="bulbs bulbs-off" aria-hidden="true"></div>
+        <div class="bulbs bulbs-on" aria-hidden="true"></div>
+        <div class="marquee-panel">
+          <h1 class="sign" data-bind="site_name">Finsonly Family Arcade</h1>
+        </div>
+      </div>
+
+      <p class="tagline"><span data-bind="headline">Welcome to the family arcade.</span> <span data-bind="intro">Our private Minecraft world and online game nights. Pick your device below and you'll be playing in a few minutes.</span></p>
+
+      <div class="counter" role="group" aria-label="What's open right now">
+        <article class="station" id="station-mc" aria-labelledby="station-mc-name">
+          <div class="token" aria-hidden="true">
+            <svg viewBox="0 0 48 32"><path d="M4 16c6-10 18-13 28-8l10-6v28l-10-6C22 29 10 26 4 16Z"/><circle cx="13" cy="14" r="2.4"/></svg>
+          </div>
+          <div class="station-body">
+            <h2 id="station-mc-name">Minecraft world</h2>
+            <p class="state" aria-live="polite">Checking the server…</p>
+            <p class="detail"></p>
+            <div class="station-actions">
+              <button class="copy copy-on-dark" type="button" data-copy="mc.finsonly.net" data-copy-bind="minecraft.address">
+                <span class="copy-value" data-bind="minecraft.address">mc.finsonly.net</span>
+                <span class="copy-label">Copy</span>
+              </button>
+              <a class="link-on-dark" href="#minecraft">How to join</a>
+              <a class="link-on-dark" id="map-link" href="/map/" hidden>World map</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="station" id="station-arcade" aria-labelledby="station-arcade-name">
+          <div class="token" aria-hidden="true">
+            <svg viewBox="0 0 48 32"><path d="M4 16c6-10 18-13 28-8l10-6v28l-10-6C22 29 10 26 4 16Z"/><circle cx="13" cy="14" r="2.4"/></svg>
+          </div>
+          <div class="station-body">
+            <h2 id="station-arcade-name">Game room</h2>
+            <p class="state" aria-live="polite">Checking the game room…</p>
+            <p class="detail"></p>
+            <div class="station-actions">
+              <a class="link-on-dark" href="#gameroom">How to join</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="ribbon" data-bind="announcement" hidden></p>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= MINECRAFT ================= -->
+    <section id="minecraft" class="section wrap" aria-labelledby="mc-title">
+      <div class="section-head">
+        <h2 id="mc-title">Join the Minecraft world</h2>
+        <p>Set up for Nintendo Switch and Switch&nbsp;2. Computers, phones and tablets can join too. Text chat in the world is checked by a moderator bot.</p>
+      </div>
+
+      <article class="switch-card" aria-labelledby="switch-title">
+        <header class="switch-head">
+          <svg class="device" viewBox="0 0 48 32" aria-hidden="true"><rect x="2" y="5" width="44" height="22" rx="7"/><rect x="13" y="8" width="22" height="16" rx="2"/><circle cx="7.5" cy="12" r="1.6"/><circle cx="40.5" cy="20" r="1.6"/></svg>
+          <h3 id="switch-title">Nintendo Switch &amp; Switch&nbsp;2</h3>
+        </header>
+
+        <div class="switch-grid">
+          <aside class="home-pass" aria-labelledby="home-title">
+            <h4 id="home-title">At <span data-bind="host_name">Eric</span>'s house</h4>
+            <p>No setup needed. Open Minecraft, choose <b>Play</b>, then the <b>Friends</b> tab. The world is listed under <b>LAN Games</b>.</p>
+          </aside>
+
+          <div class="away">
+            <h4>From your house</h4>
+            <p class="before">Do this once with a grown-up. You need a Nintendo Switch Online membership, and Minecraft signed in to a Microsoft account.</p>
+            <ol class="steps">
+              <li>On the Switch Home menu, open <b>System Settings</b>, then <b>Internet</b>, then <b>Internet Settings</b>.</li>
+              <li>Pick your home Wi-Fi, choose <b>Change Settings</b>, then set <b>DNS Settings</b> to <b>Manual</b>.</li>
+              <li>
+                Type in these two numbers, then choose <b>Save</b>.
+                <dl class="plates">
+                  <div><dt>Primary DNS</dt><dd><button class="copy" type="button" data-copy="104.238.130.180" data-copy-bind="minecraft.bedrockconnect_dns.primary"><span class="copy-value" data-bind="minecraft.bedrockconnect_dns.primary">104.238.130.180</span><span class="copy-label">Copy</span></button></dd></div>
+                  <div><dt>Secondary DNS</dt><dd><button class="copy" type="button" data-copy="8.8.8.8" data-copy-bind="minecraft.bedrockconnect_dns.secondary"><span class="copy-value" data-bind="minecraft.bedrockconnect_dns.secondary">8.8.8.8</span><span class="copy-label">Copy</span></button></dd></div>
+                </dl>
+              </li>
+              <li>Restart the Switch: hold the power button, choose <b>Power Options</b>, then <b>Restart</b>.</li>
+              <li>Open Minecraft, choose <b>Play</b>, go to the <b>Servers</b> tab and pick any server in the list.</li>
+              <li>
+                A different menu opens. Choose <b>Connect to a Server</b>, fill in these, turn on <b>Add to server list</b>, and connect.
+                <dl class="plates">
+                  <div><dt>Server Address</dt><dd><button class="copy" type="button" data-copy="mc.finsonly.net" data-copy-bind="minecraft.address"><span class="copy-value" data-bind="minecraft.address">mc.finsonly.net</span><span class="copy-label">Copy</span></button></dd></div>
+                  <div><dt>Port</dt><dd><button class="copy" type="button" data-copy="19132" data-copy-bind="minecraft.port"><span class="copy-value" data-bind="minecraft.port">19132</span><span class="copy-label">Copy</span></button></dd></div>
+                </dl>
+              </li>
+            </ol>
+            <p class="after">Next time, just do steps 5 and 6. The world will be saved in that menu.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="others">
+        <h3>Playing on something else?</h3>
+        <div class="disclosures">
+          <details>
+            <summary>
+              <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="6" width="24" height="16" rx="2"/><path d="M12 27h8M16 22v5"/></svg>
+              Windows PC
+            </summary>
+            <p class="before">You need <b>Minecraft for Windows</b> (sometimes called Bedrock Edition). Java Edition can't join this world.</p>
+            <ol class="steps">
+              <li>Open Minecraft, choose <b>Play</b>, then the <b>Servers</b> tab.</li>
+              <li>Scroll to the bottom of the list and choose <b>Add Server</b>.</li>
+              <li>
+                Give it any name you like, fill in these, and choose <b>Save</b>.
+                <dl class="plates">
+                  <div><dt>Server Address</dt><dd><button class="copy" type="button" data-copy="mc.finsonly.net" data-copy-bind="minecraft.address"><span class="copy-value" data-bind="minecraft.address">mc.finsonly.net</span><span class="copy-label">Copy</span></button></dd></div>
+                  <div><dt>Port</dt><dd><button class="copy" type="button" data-copy="19132" data-copy-bind="minecraft.port"><span class="copy-value" data-bind="minecraft.port">19132</span><span class="copy-label">Copy</span></button></dd></div>
+                </dl>
+              </li>
+              <li>Pick the server you just added and choose <b>Join Server</b>.</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>
+              <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M14 25h4"/></svg>
+              Phone or tablet
+            </summary>
+            <p class="before">Android phones and tablets, iPhone and iPad, with the regular Minecraft app.</p>
+            <ol class="steps">
+              <li>Open Minecraft, tap <b>Play</b>, then the <b>Servers</b> tab.</li>
+              <li>Scroll to the bottom of the list and tap <b>Add Server</b>.</li>
+              <li>
+                Give it any name you like, fill in these, and tap <b>Save</b>.
+                <dl class="plates">
+                  <div><dt>Server Address</dt><dd><button class="copy" type="button" data-copy="mc.finsonly.net" data-copy-bind="minecraft.address"><span class="copy-value" data-bind="minecraft.address">mc.finsonly.net</span><span class="copy-label">Copy</span></button></dd></div>
+                  <div><dt>Port</dt><dd><button class="copy" type="button" data-copy="19132" data-copy-bind="minecraft.port"><span class="copy-value" data-bind="minecraft.port">19132</span><span class="copy-label">Copy</span></button></dd></div>
+                </dl>
+              </li>
+              <li>Tap the server you just added and tap <b>Join Server</b>.</li>
+            </ol>
+          </details>
+
+          <details>
+            <summary>
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 11h16a5 5 0 0 1 5 5v3a4 4 0 0 1-7 2.6L20 19h-8l-2 2.6A4 4 0 0 1 3 19v-3a5 5 0 0 1 5-5Z"/><path d="M9 14v4M7 16h4"/></svg>
+              Xbox or PlayStation
+            </summary>
+            <p>These work with the same trick as the Switch, but the menus are different on each console. <span data-bind="contact_note">Text Eric</span> and he'll walk you through it. It takes about five minutes the first time.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="help">
+        <h3>If something goes wrong</h3>
+        <dl class="faq">
+          <div>
+            <dt>"That message wasn't sent"</dt>
+            <dd>The chat moderator stopped it. It blocks swear words, mean words, links, and private things like addresses, phone numbers and schools. Say it another way. If you get a few in a row, your chat turns off for 10 minutes, but you can keep playing.</dd>
+          </div>
+          <div>
+            <dt>The Switch says Minecraft can't play online</dt>
+            <dd>Check the Nintendo Switch Online membership first. Then a grown-up should open the Nintendo parental controls and allow <b>Communication with Others</b> for Minecraft. When that's restricted, Minecraft turns off all online play, including this world.</dd>
+          </div>
+          <div>
+            <dt>"You are not invited to this server"</dt>
+            <dd>The world only lets in people on the guest list. Send <span data-bind="host_name">Eric</span> your Minecraft gamertag and try again once he says you're added.</dd>
+          </div>
+          <div>
+            <dt>"Outdated server" or "Outdated client"</dt>
+            <dd>Update Minecraft on your Switch first. The server updates itself every night, so if it still says outdated, let <span data-bind="host_name">Eric</span> know.</dd>
+          </div>
+          <div>
+            <dt>Picking a server opens the real server instead of the menu</dt>
+            <dd>The Switch is still using its old settings. Check the two DNS numbers, then restart the Switch again.</dd>
+          </div>
+          <div>
+            <dt>"Unable to connect to world"</dt>
+            <dd>Check the Minecraft token at the top of this page. If it's dark, the world may be restarting. Try again in a few minutes.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= GAME ROOM ================= -->
+    <section id="gameroom" class="section wrap" aria-labelledby="gameroom-title">
+      <div class="section-head">
+        <h2 id="gameroom-title">The game room</h2>
+        <p>Classic console nights for the grown-ups. <span data-bind="host_name">Eric</span> runs the games on his computer and streams them to you with Parsec. You play with a controller from a PC or an Android tablet and talk on Discord, like everyone's on the same couch.</p>
+      </div>
+
+      <div class="two-up">
+        <div class="col">
+          <h3>Set up once</h3>
+          <ol class="steps">
+            <li>Install <b>Parsec</b> and make a free account. On a PC or Mac, get it from parsec.app. On an Android tablet, get it from the Google Play Store.</li>
+            <li>Send <span data-bind="host_name">Eric</span> your Parsec username. When his friend request arrives, accept it under <b>Friends</b>.</li>
+            <li>Join the arcade's <b>Discord</b> server with the invite link <span data-bind="host_name">Eric</span> sends you.</li>
+            <li>Connect a controller to the PC or tablet. Xbox and PlayStation controllers both work.</li>
+          </ol>
+        </div>
+        <div class="col">
+          <h3>On game night</h3>
+          <ol class="steps">
+            <li>When the room opens, the Game room token at the top of this page lights up and Discord posts an announcement.</li>
+            <li>Join the <b>#<span data-bind="arcade.discord_voice_channel">game-night</span></b> voice channel on Discord.</li>
+            <li>Open Parsec, go to <b>Computers</b>, choose <b><span data-bind="arcade.parsec_computer_name">Finsonly Arcade</span></b>, then <b>Connect</b>.</li>
+            <li>Press any button on your controller to grab a player spot. Player 1 presses first, then Player 2, and so on.</li>
+          </ol>
+        </div>
+      </div>
+
+      <section class="cup" id="cup" aria-labelledby="cup-title" hidden>
+        <div class="cup-head">
+          <svg class="cup-trophy" viewBox="0 0 64 64" aria-hidden="true"><path d="M18 8h28v10a14 14 0 0 1-28 0Z"/><path class="cup-handles" d="M18 12H9a8 8 0 0 0 9 10M46 12h9a8 8 0 0 1-9 10"/><rect x="28" y="32" width="8" height="12"/><rect class="cup-base" x="20" y="44" width="24" height="8" rx="2"/></svg>
+          <div>
+            <h3 id="cup-title">Tournament</h3>
+            <p class="cup-meta" id="cup-meta"></p>
+          </div>
+        </div>
+        <p class="cup-champion" id="cup-champion" hidden></p>
+        <div class="cup-table-wrap" id="cup-table-wrap" hidden>
+          <table class="cup-table">
+            <caption class="visually-offscreen">Standings</caption>
+            <thead><tr><th scope="col">Place</th><th scope="col">Racer</th><th scope="col">Points</th><th scope="col">Wins</th></tr></thead>
+            <tbody id="cup-rows"></tbody>
+          </table>
+        </div>
+        <p class="cup-empty" id="cup-empty" hidden></p>
+        <div class="hall" id="hall" hidden>
+          <h4>Hall of champions</h4>
+          <ul id="hall-list"></ul>
+        </div>
+      </section>
+
+      <aside class="turns" aria-labelledby="turns-title">
+        <h3 id="turns-title">One-player games: take turns</h3>
+        <p>Games marked <span class="game-players">Take turns</span> work like the old days on the couch. One person plays a level, a life or a race while everyone else watches and heckles on Discord. To pass the controller, <span data-bind="host_name">Eric</span> resets the controllers, and whoever's up next presses a button first to become Player 1.</p>
+      </aside>
+
+      <div class="cabinets-wrap">
+        <h3 id="cabinets-title">Consoles and games</h3>
+        <div class="cabinets" id="cabinets" aria-labelledby="cabinets-title">
+          <p class="empty">The game list shows up here when the page finishes loading.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GAME NIGHTS ================= -->
+    <section id="nights" class="section wrap" aria-labelledby="nights-title">
+      <div class="section-head">
+        <h2 id="nights-title">Game nights and events</h2>
+        <p>Times are shown in your own time zone.</p>
+      </div>
+      <div class="events" id="events" hidden></div>
+      <ul class="tickets" id="nights-list">
+        <li class="empty">Game nights show up here when the page finishes loading.</li>
+      </ul>
+      <p class="hours" data-bind="play_hours" hidden></p>
+
+      <div class="showcase-wrap" id="showcase-wrap" hidden>
+        <h3>Showcase</h3>
+        <ul class="showcase" id="showcase"></ul>
+      </div>
+    </section>
+
+    <!-- ================= RULES ================= -->
+    <section id="rules" class="section wrap" aria-labelledby="rules-title">
+      <div class="posted">
+        <h2 id="rules-title">Minecraft rule book</h2>
+        <p class="posted-sub">Everyone who plays in the world agrees to these. The details are below.</p>
+        <ul class="rules" id="rules-list"></ul>
+      </div>
+
+      <div class="rulebook" id="rulebook" hidden>
+        <div class="chapters" id="rule-chapters"></div>
+
+        <div class="ladder-wrap">
+          <h3 id="ladder-title">What happens if a rule is broken</h3>
+          <ol class="ladder" id="rule-ladder" aria-labelledby="ladder-title"></ol>
+        </div>
+
+        <p class="mistakes" id="rule-mistakes" hidden></p>
+      </div>
+    </section>
+
+    <!-- ================= GROWN-UPS ================= -->
+    <section id="grownups" class="section wrap" aria-labelledby="grownups-title">
+      <div class="section-head">
+        <h2 id="grownups-title">For grown-ups</h2>
+        <p>How this works, what your child's accounts need, and what this page does and doesn't do.</p>
+      </div>
+
+      <div class="accordion">
+        <details>
+          <summary>What is this, and who runs it?</summary>
+          <p><span data-bind="host_name">Eric</span> runs a private Minecraft world for the kids in the family on his own server at home. It isn't a public server, and there's no cost to join. The game room on this page is a separate game night for adults; kids don't need it.</p>
+        </details>
+
+        <details>
+          <summary>Who can get into the Minecraft world?</summary>
+          <p>Only people on the guest list. Every player has to be added by gamertag first, so someone who finds the address still can't get in. Players can't use cheats or change world settings.</p>
+          <p>There's no voice chat in the world, only text chat, so the cousins can talk while they build.</p>
+        </details>
+
+        <details>
+          <summary>Nintendo Switch settings</summary>
+          <p>Your child needs a <b>Nintendo Switch Online</b> membership to play online.</p>
+          <p>You can keep Nintendo's parental controls on. In the Nintendo Switch Parental Controls app, under restrictions, allow <b>Communication with Others</b> for Minecraft only. It's a per-game setting. While it's restricted for Minecraft, the game turns off all online play, including this world.</p>
+        </details>
+
+        <details>
+          <summary>Microsoft account settings</summary>
+          <p>Minecraft multiplayer uses the Microsoft account your child signs in with, even on a Switch. If it's a child account in Microsoft Family, the family organizer changes two settings from the <b>parent's</b> account, at account.xbox.com/settings or in the Xbox Family Settings app:</p>
+          <ul>
+            <li><b>You can join multiplayer games</b>: set to Allow.</li>
+            <li><b>You can join cross-network play</b>: set to Allow. This lets a Switch, PC and tablet play together.</li>
+          </ul>
+          <p>Changes can take a few hours to reach Minecraft. Sign out of Minecraft and back in if it still says multiplayer is blocked.</p>
+        </details>
+
+        <details>
+          <summary>About the Switch DNS change</summary>
+          <p>Switch, Xbox and PlayStation don't have a button for adding private servers. The DNS change points the Switch at <b>BedrockConnect</b>, a free community service, which swaps Minecraft's featured-server list for a menu where you can type in our address. The second number is Google's public DNS.</p>
+          <p>While it's set, the Switch looks up internet addresses through that service on that Wi-Fi network. You can set DNS Settings back to <b>Automatic</b> any time. You'll just need to change it again before joining the world from home.</p>
+        </details>
+
+        <details>
+          <summary>How chat is kept safe</summary>
+          <p>A moderator bot reads every chat message before anyone else sees it. It stops messages with swearing, mean words, links, or personal details like addresses, phone numbers, emails, schools and last names, and private one-to-one messages are turned off so everything is said in the open.</p>
+          <p>A player who sends several blocked messages in a short time has their chat turned off for 10 minutes; they can keep playing. Serious messages turn chat off right away and alert <span data-bind="host_name">Eric</span>.</p>
+          <p>Chat is saved on <span data-bind="host_name">Eric</span>'s server for 30 days so he can look into anything that comes up, then deleted. Alerts to his phone say who and what kind of thing happened, never the personal detail itself. If the moderator ever stops working, the world shuts itself down rather than run with unchecked chat.</p>
+          <p>No filter is perfect. Please keep talking with your child about who they play with and what they share.</p>
+        </details>
+
+        <details>
+          <summary>What this page collects</summary>
+          <p>Nothing. There are no accounts, cookies, ads or tracking here. The page only checks whether the Minecraft world and the game room are on, and it shows how many people are playing, never who.</p>
+        </details>
+
+        <details>
+          <summary>Questions or concerns</summary>
+          <p><span data-bind="contact_note">Text Eric</span>. If anything happens in the world that worries you or your child, tell him and he'll look into it the same day.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-panel">
+      <p class="foot-brand">
+        <svg class="fish" viewBox="0 0 48 32" aria-hidden="true"><path d="M4 16c6-10 18-13 28-8l10-6v28l-10-6C22 29 10 26 4 16Z"/><circle cx="13" cy="14" r="2.4"/></svg>
+        <span><span data-bind="site_name">Finsonly Family Arcade</span> is run by <span data-bind="host_name">Eric</span> for family.</span>
+      </p>
+      <p>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft. Not affiliated with Nintendo, Sony or Parsec.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

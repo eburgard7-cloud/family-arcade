@@ -1,0 +1,20 @@
+# Private or machine-specific: never commit these.
+.env
+*.key
+deploy_key*
+
+# Created on the server at runtime (worlds, logs, backups, status files).
+minecraft/
+minecraft-fallback/
+state/
+map/
+map-work/
+tools/
+lobby-config/gallery/
+
+# Build leftovers
+__pycache__/
+.pytest_cache/
+*.pyc
+*.tar.gz
+*.partial

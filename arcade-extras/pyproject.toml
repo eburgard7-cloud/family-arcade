@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "endstone-arcade-extras"
+version = "0.1.0"
+description = "Family server extras: a first-join welcome to the town (title, fireworks, starter kit, teleport, personal plots) and a returning-player greeting."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[project.entry-points."endstone"]
+arcade-extras = "endstone_arcade_extras:ArcadeExtras"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/endstone_arcade_extras"]

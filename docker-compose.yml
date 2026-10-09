@@ -1,0 +1,89 @@
+# Family arcade stack: Bedrock server (Endstone + Chat Guard) + lobby page.
+# Lives at /mnt/user/appdata/arcade. Start with:  docker compose up -d --build
+# The Arcade VM (game room) is a libvirt VM, not part of this file.
+
+name: arcade
+
+services:
+  mc-bedrock:
+    # Official Bedrock Dedicated Server with the Endstone plugin layer, which runs
+    # the Chat Guard moderator. Each Endstone release pins one Bedrock version;
+    # the nightly script pulls this image to stay current.
+    image: endstone/endstone:latest
+    container_name: mc-bedrock
+    # Host networking so a Switch at your house sees the world under Friends > LAN Games.
+    network_mode: host
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    # Clean shutdown: tini sends SIGINT to the whole process group, so the
+    # Bedrock server itself saves the world and exits (Phase 2 verifies this).
+    init: true
+    stop_signal: SIGINT
+    stop_grace_period: 90s
+    environment:
+      PUID: "99"                 # Unraid nobody:users
+      PGID: "100"
+      TZ: "America/Los_Angeles"
+      TINI_KILL_PROCESS_GROUP: "1"
+    volumes:
+      - /mnt/user/appdata/arcade/minecraft:/data
+
+  # Chat-off fallback, used only when a Minecraft update has reached the kids'
+  # consoles before Endstone supports it. Same world (copied), chat disabled
+  # for everyone, so it fails closed. Managed by scripts/mc-fallback.sh.
+  mc-vanilla:
+    profiles: ["fallback"]
+    image: itzg/minecraft-bedrock-server:latest
+    container_name: mc-vanilla
+    network_mode: host
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    stop_grace_period: 60s
+    environment:
+      EULA: "TRUE"
+      VERSION: "LATEST"
+      TZ: "America/Los_Angeles"
+      UID: "99"
+      GID: "100"
+      SERVER_NAME: "Finsonly Family Server"
+      LEVEL_NAME: "Cousins World"
+      LEVEL_SEED: "-2746961253358476370"   # only used if the fallback ever has to create a world
+      GAMEMODE: "survival"
+      DIFFICULTY: "easy"
+      ALLOW_CHEATS: "false"
+      MAX_PLAYERS: "10"
+      ONLINE_MODE: "true"
+      ALLOW_LIST: "true"
+      DEFAULT_PLAYER_PERMISSION_LEVEL: "member"
+      ENABLE_LAN_VISIBILITY: "true"
+      VIEW_DISTANCE: "16"
+      TICK_DISTANCE: "4"
+      CHAT_RESTRICTION: "Disabled"   # no moderator running, so no chat
+      STOP_SERVER_ANNOUNCE_DELAY: "10"
+    volumes:
+      - /mnt/user/appdata/arcade/minecraft-fallback:/data
+
+  lobby:
+    build: ./lobby
+    image: finsonly/arcade-lobby:local
+    container_name: arcade-lobby
+    restart: unless-stopped
+    networks: [proxy]            # Caddy reaches it as arcade-lobby:8080; no host port
+    environment:
+      MC_PING_HOST: "192.168.0.128"   # server LAN IP, not localhost (Bedrock is on host net)
+      MC_PING_PORT: "19132"
+      TZ: "America/Los_Angeles"
+    volumes:
+      - /mnt/user/appdata/arcade/lobby-config:/config:ro
+      - /mnt/user/appdata/arcade/state:/state:ro
+      - /mnt/user/appdata/arcade/map:/map:ro          # world map (scripts/mc-map.sh), behind the family password
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  proxy:
+    external: true

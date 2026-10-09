@@ -1,0 +1,314 @@
+{
+  "_readme": "Everything in this file is shown on the public lobby page. Never put kids' names, gamertags, phone numbers or addresses here. Edits show up on the next page load; no restart needed. After editing, check it with: docker exec arcade-lobby python3 -m json.tool /config/config.json",
+  "site_name": "Finsonly Family Arcade",
+  "headline": "Welcome to the family arcade.",
+  "intro": "The cousins' private Minecraft world, plus classic console nights for the grown-ups, hosted by Eric. Pick your device below and you'll be playing in a few minutes.",
+  "host_name": "Eric",
+  "contact_note": "Text Eric",
+  "announcement": "Minecraft for Nintendo Switch 2 comes out October 27. The server updates itself overnight, so you can keep playing after you update.",
+  "season": "auto",
+  "_season_help": "auto picks a theme by date (Halloween in October, winter Dec 1 to Jan 6). Or set halloween, winter or none.",
+  "minecraft": {
+    "address": "mc.finsonly.net",
+    "port": 19132,
+    "world_name": "Cousins World",
+    "mode": "Survival on easy, with keep-inventory on",
+    "bedrockconnect_dns": {
+      "primary": "104.238.130.180",
+      "secondary": "8.8.8.8"
+    }
+  },
+  "arcade": {
+    "parsec_computer_name": "Finsonly Arcade",
+    "discord_voice_channel": "game-night",
+    "_systems_help": "id: use the ES-DE folder name (n64, gc, ps2, psx, dreamcast, wii, wiiu, snes) so the page and the VM match. status: ready (shown with its games), soon (shown greyed as Coming soon), hidden (not shown). Order here is the order on the page.",
+    "systems": [
+      {
+        "id": "n64",
+        "name": "Nintendo 64",
+        "status": "ready",
+        "max_players": 4
+      },
+      {
+        "id": "gc",
+        "name": "GameCube",
+        "status": "ready",
+        "max_players": 4
+      },
+      {
+        "id": "ps2",
+        "name": "PlayStation 2",
+        "status": "ready",
+        "max_players": 4
+      },
+      {
+        "id": "psx",
+        "name": "PlayStation",
+        "status": "soon",
+        "max_players": 4
+      },
+      {
+        "id": "dreamcast",
+        "name": "Dreamcast",
+        "status": "hidden",
+        "max_players": 4
+      },
+      {
+        "id": "wii",
+        "name": "Wii",
+        "status": "soon",
+        "max_players": 4
+      },
+      {
+        "id": "wiiu",
+        "name": "Wii U",
+        "status": "hidden",
+        "max_players": 4
+      },
+      {
+        "id": "snes",
+        "name": "Super Nintendo",
+        "status": "hidden",
+        "max_players": 2
+      }
+    ],
+    "_games_help": "system must match an id above. players \"1\" shows a Take turns tag. List only games you've dumped and tested.",
+    "games": [
+      {
+        "title": "Mario Kart 64",
+        "system": "n64",
+        "players": "1–4",
+        "note": "The classic four-player kart race."
+      },
+      {
+        "title": "Mario Party",
+        "system": "n64",
+        "players": "1–4",
+        "note": "Board game full of minigames."
+      },
+      {
+        "title": "Diddy Kong Racing",
+        "system": "n64",
+        "players": "1–4",
+        "note": "Race karts, hovercraft and planes."
+      },
+      {
+        "title": "Mario Kart: Double Dash!!",
+        "system": "gc",
+        "players": "1–4",
+        "note": "Two racers per kart. Team up and swap seats."
+      },
+      {
+        "title": "Mario Party 4",
+        "system": "gc",
+        "players": "1–4",
+        "note": "More boards, more minigames."
+      },
+      {
+        "title": "Kirby Air Ride",
+        "system": "gc",
+        "players": "1–4",
+        "note": "One-button racing. Anyone can pick it up."
+      },
+      {
+        "title": "Super Monkey Ball",
+        "system": "gc",
+        "players": "1–4",
+        "note": "Roll your monkey to the goal, plus party games."
+      },
+      {
+        "title": "Crash Nitro Kart",
+        "system": "ps2",
+        "players": "1–4",
+        "note": "Kart racing with power-ups."
+      },
+      {
+        "title": "Katamari Damacy",
+        "system": "ps2",
+        "players": "1–2",
+        "note": "Roll a sticky ball around and pick up everything."
+      },
+      {
+        "title": "SSX Tricky",
+        "system": "ps2",
+        "players": "1–2",
+        "note": "Snowboard racing with big tricks."
+      },
+      {
+        "title": "Gran Turismo 4",
+        "system": "ps2",
+        "players": "1–2",
+        "note": "Head-to-head racing in hundreds of cars."
+      },
+      {
+        "title": "Crash Team Racing",
+        "system": "psx",
+        "players": "1–4",
+        "note": "Kart racing with the multitap. Still the best one."
+      },
+      {
+        "title": "Spyro the Dragon",
+        "system": "psx",
+        "players": "1",
+        "note": "Pass the controller after every world."
+      },
+      {
+        "title": "Crash Bandicoot: Warped",
+        "system": "psx",
+        "players": "1",
+        "note": "One life each, then hand it over."
+      },
+      {
+        "title": "ChuChu Rocket!",
+        "system": "dreamcast",
+        "players": "1–4",
+        "note": "Frantic puzzle chaos. Everyone versus everyone."
+      },
+      {
+        "title": "Sonic Adventure 2",
+        "system": "dreamcast",
+        "players": "1–2",
+        "note": "Story mode in turns, or race head to head."
+      },
+      {
+        "title": "Crazy Taxi",
+        "system": "dreamcast",
+        "players": "1",
+        "note": "Best score wins. Three minutes each."
+      },
+      {
+        "title": "Sega Bass Fishing",
+        "system": "dreamcast",
+        "players": "1",
+        "note": "Biggest fish wins the round."
+      },
+      {
+        "title": "New Super Mario Bros. Wii",
+        "system": "wii",
+        "players": "1–4",
+        "note": "Four players in one side-scrolling level."
+      },
+      {
+        "title": "Mario Kart 8",
+        "system": "wiiu",
+        "players": "1–4",
+        "note": "Four-way split-screen racing."
+      }
+    ]
+  },
+  "game_nights": [
+    {
+      "start": "2026-10-23T18:00:00-07:00",
+      "end": "2026-10-23T20:00:00-07:00",
+      "title": "Kart night",
+      "plan": "Mario Kart 64, then Double Dash!! in teams."
+    },
+    {
+      "start": "2026-10-30T18:00:00-07:00",
+      "end": "2026-10-30T20:00:00-07:00",
+      "title": "Minecraft build night",
+      "plan": "Build a haunted house together in the world."
+    }
+  ],
+  "play_hours": "The Minecraft world is open every day. It restarts at 4 AM Pacific for updates and backups, which takes about a minute.",
+  "rules": [
+    "Be kind. Talk to everyone the way you'd want them to talk to you.",
+    "Build your own stuff. Don't break or take anything someone else made.",
+    "Ask before you go into someone's house or base.",
+    "Keep private things private. No last names, addresses, schools or phone numbers in chat.",
+    "Chat is checked by a moderator bot. If a message doesn't send, say it another way.",
+    "If something feels wrong, stop playing and tell a grown-up and Eric.",
+    "Take breaks, and log off when your grown-up says it's time."
+  ],
+  "rulebook": {
+    "_help": "Shown under the short rules. Keep the numbers here matching minecraft/moderation/settings.json (strikes_to_mute, strike_window_minutes, mute_minutes).",
+    "chapters": [
+      {
+        "title": "Chat",
+        "items": [
+          "A moderator bot reads every message before anyone else sees it.",
+          "These don't get sent: swear words, mean words like \"stupid\" or \"shut up\", links, and asking other players to add you on another app.",
+          "Private things don't get sent either: your address, phone number, email, school or last name. The bot also stops questions asking for them.",
+          "Private messages (/tell, /msg, /w) are off. Everything is said in the open so everyone can see it.",
+          "Spamming the same message, or lots of messages really fast, gets blocked too.",
+          "Writing in ALL CAPS is fine, but it shows up in lowercase."
+        ]
+      },
+      {
+        "title": "Building and playing",
+        "items": [
+          "Build your own stuff. Don't break, change or take things from someone else's build or chests.",
+          "Ask before you go into someone's house or base, or build right next to it.",
+          "No traps, lava, or TNT near other people's things. (TNT, creepers and fire can't wreck builds on this server anyway.)",
+          "Share the farms and the community areas. Put things back where you found them.",
+          "Keep builds, signs, names and skins friendly. Anything you'd be embarrassed for your grown-up to see doesn't belong here.",
+          "Players can't hurt each other here, and you keep your stuff when you die."
+        ]
+      },
+      {
+        "title": "Your account",
+        "items": [
+          "Only people on the guest list can join. Don't share the server address with friends outside the family; ask Eric to add them.",
+          "Use your own account. Don't play on someone else's.",
+          "Eric keeps a backup of the world every night, so nothing is lost for good."
+        ]
+      }
+    ],
+    "ladder": [
+      {
+        "title": "Blocked message",
+        "text": "The message isn't sent, and the bot tells you why in a note only you can see. Say it another way."
+      },
+      {
+        "title": "Strike",
+        "text": "Swear words and mean words count as a strike. After 2 strikes you get a warning."
+      },
+      {
+        "title": "Chat off for 10 minutes",
+        "text": "3 strikes in 15 minutes turns your chat off for 10 minutes. You can keep playing and building."
+      },
+      {
+        "title": "Serious message",
+        "text": "Telling someone to hurt themselves turns chat off right away, and Eric is told."
+      },
+      {
+        "title": "Talk with your grown-up",
+        "text": "If problems keep happening, or someone wrecks other people's builds, Eric talks with your grown-up and you may take a break from the server."
+      }
+    ],
+    "mistakes": "If the bot blocks something that was fine, tell Eric what you typed. He can teach the bot that word is okay. If anything in the world makes you feel uncomfortable, stop playing and tell your grown-up and Eric. You won't be in trouble for telling."
+  },
+  "events": [
+    {
+      "title": "Spooky Build Contest",
+      "start": "2026-10-16T00:00:00-07:00",
+      "end": "2026-10-31T23:59:00-07:00",
+      "details": "Build the spookiest house on your plot. Eric picks a winner on Halloween and it goes in the showcase."
+    },
+    {
+      "title": "Winter Village",
+      "start": "2026-12-12T00:00:00-08:00",
+      "end": "2027-01-05T23:59:00-08:00",
+      "details": "Everyone adds one building to a snowy village by the town square. Lights encouraged."
+    }
+  ],
+  "_events_help": "Shown in Game nights and events, plus a banner at the top while one is running.",
+  "showcase": [],
+  "_showcase_help": "Screenshots go in lobby-config/gallery/ (jpg, png or webp). Example: {\"image\": \"castle.png\", \"title\": \"Cliffside castle\", \"by\": \"nickname\", \"event\": \"Spooky Build Contest\"}. Nicknames only.",
+  "tournament": {
+    "title": "Mario Kart 64 Cup",
+    "date": "2026-10-23T18:00:00-07:00",
+    "status": "upcoming",
+    "_status_help": "upcoming, live or done. Results: list each race's finishing order, first place first. Points per place follow 'points'.",
+    "points": [
+      9,
+      6,
+      3,
+      1
+    ],
+    "players": [],
+    "races": []
+  },
+  "hall_of_champions": [],
+  "_hall_help": "Past winners, newest first: {\"event\": \"Mario Kart 64 Cup\", \"date\": \"2026-10-23\", \"champion\": \"nickname\"}"
+}

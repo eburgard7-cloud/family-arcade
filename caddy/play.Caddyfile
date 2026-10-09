@@ -1,0 +1,27 @@
+# Add to /mnt/user/appdata/stack/Caddyfile, then: docker exec caddy caddy reload --config /etc/caddy/Caddyfile
+# (or docker restart caddy). TLS comes from your existing Cloudflare DNS-01 setup.
+#
+# Copy the geoblock and crowdsec lines from your jellyfin block into the marked spot,
+# exactly as they are there. The lobby needs no login; the world map does.
+#
+# Family password for the map. Make the hash with:
+#   docker exec caddy caddy hash-password --plaintext 'your-family-password'
+# and paste it below in place of PASTE_HASH_HERE. The username is "family".
+
+play.finsonly.net {
+	# --- paste the geoblock + crowdsec lines from the jellyfin block here ---
+
+	encode zstd gzip
+	header {
+		X-Robots-Tag "noindex, nofollow"
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+
+	@map path /map /map/*
+	basic_auth @map {
+		family PASTE_HASH_HERE
+	}
+
+	reverse_proxy arcade-lobby:8080
+}
