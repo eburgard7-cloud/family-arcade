@@ -272,7 +272,7 @@ docker update --restart=unless-stopped mc-bedrock && cd /mnt/user/appdata/arcade
    docker ps --filter name=arcade-lobby --format '{{.Names}} {{.Status}}'
    ```
    **Verify:** status shows `(healthy)` after ~30s.
-3. **Caddy:** open `/mnt/user/appdata/stack/Caddyfile` in nano, append the block from `caddy/play.Caddyfile`, and paste your jellyfin block's geoblock + crowdsec lines into the marked spot. Reload:
+3. **Caddy:** append `caddy/play.Caddyfile` to `/mnt/user/appdata/stack/caddy/Caddyfile` (the file the caddy container mounts) and put the map password hash in place of `PASTE_HASH_HERE`; the block already carries the same geoblock + CrowdSec as jellyfin. Reload:
    ```
    docker exec caddy caddy reload --config /etc/caddy/Caddyfile
    ```

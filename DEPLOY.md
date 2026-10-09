@@ -137,7 +137,7 @@ docker exec caddy caddy hash-password --plaintext 'pick-a-family-password'
 ```
 Open your Caddyfile:
 ```
-nano /mnt/user/appdata/stack/Caddyfile
+nano /mnt/user/appdata/stack/caddy/Caddyfile
 ```
 1. Go to the bottom and paste everything from `caddy/play.Caddyfile`, starting at `play.finsonly.net {`.
 2. Replace `PASTE_HASH_HERE` with the hash. **Caddy won't reload while the placeholder is still there.**
