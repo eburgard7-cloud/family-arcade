@@ -88,7 +88,7 @@ It's kept outside the repo folder and survives reboots.
 
 **3. Connect the existing folder to the repo.** This doesn't touch the world, `.env` or anything git ignores.
 ```
-cd /mnt/user/appdata/arcade && git init -q -b main && git config core.sshCommand "ssh -i /mnt/user/appdata/arcade-secrets/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/mnt/user/appdata/arcade-secrets/known_hosts" && git config user.name "Tower" && git config user.email "tower@finsonly.net" && git remote add origin git@github.com:eburgard7-cloud/family-arcade.git && git fetch -q origin && git reset -q --hard origin/main && git branch -q -u origin/main && chmod +x scripts/*.sh && git log --oneline -1
+cd /mnt/user/appdata/arcade && git init -q -b main && git config core.sshCommand "ssh -i /mnt/user/appdata/arcade-secrets/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/mnt/user/appdata/arcade-secrets/known_hosts" && git config user.name "Tower" && git config user.email "tower@finsonly.net" && git config core.pager cat && git remote add origin git@github.com:eburgard7-cloud/family-arcade.git && git fetch -q origin && git reset -q --hard origin/main && git branch -q -u origin/main && chmod +x scripts/*.sh && git log --oneline -1
 ```
 **Check:** it prints the latest commit message.
 
