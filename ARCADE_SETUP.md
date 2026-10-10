@@ -520,7 +520,7 @@ When the oldest cousins turn 13, a kids' voice channel can be added with Discord
 > Hi! I've set up a private Minecraft world for the kids. Everything's explained at **play.finsonly.net** (there's a "For grown-ups" section at the bottom).
 >
 > - It's invite-only: I add each kid's Minecraft gamertag to a guest list, and nobody else can get in.
-> - There's no voice chat. Text chat is checked by a moderator bot that blocks swearing, mean words, links and personal info (addresses, phone numbers, schools), and private messages are off. I get an alert if anything serious comes up.
+> - There's no voice chat, and text chat is turned off for now, so nobody can message your kid in the world. (If I turn chat on later with a moderator bot, I'll tell you first.)
 >
 > To get your kid in, I need:
 > 1. **Their Minecraft gamertag.**

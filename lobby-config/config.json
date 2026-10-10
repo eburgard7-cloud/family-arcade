@@ -212,16 +212,26 @@
   ],
   "play_hours": "The Minecraft world is open every day. It restarts at 4 AM Pacific for updates and backups, which takes about a minute.",
   "rules": [
-    "Be kind. Talk to everyone the way you'd want them to talk to you.",
+    "Be kind. Treat everyone the way you'd want to be treated.",
     "Build your own stuff. Don't break or take anything someone else made.",
     "Ask before you go into someone's house or base.",
-    "Keep private things private. No last names, addresses, schools or phone numbers in chat.",
-    "Chat is checked by a moderator bot. If a message doesn't send, say it another way.",
+    {
+      "when": "moderated",
+      "text": "Keep private things private. No last names, addresses, schools or phone numbers in chat."
+    },
+    {
+      "when": "moderated",
+      "text": "Chat is checked by a moderator bot. If a message doesn't send, say it another way."
+    },
+    {
+      "when": "off",
+      "text": "Chat is off in this world. Signs and books are for labels and stories, not messages, and never for private things like last names, addresses or schools."
+    },
     "If something feels wrong, stop playing and tell a grown-up and Eric.",
     "Take breaks, and log off when your grown-up says it's time."
   ],
   "rulebook": {
-    "_help": "Shown under the short rules. Keep the numbers here matching minecraft/moderation/settings.json (strikes_to_mute, strike_window_minutes, mute_minutes).",
+    "_help": "Shown under the short rules. The \"moderated\" items quote the moderator numbers in minecraft/moderation/settings.json (strikes_to_mute, strike_window_minutes, mute_minutes); keep them matching.",
     "chapters": [
       {
         "title": "Chat",
@@ -232,6 +242,16 @@
           "Private messages (/tell, /msg, /w) are off. Everything is said in the open so everyone can see it.",
           "Spamming the same message, or lots of messages really fast, gets blocked too.",
           "Writing in ALL CAPS is fine, but it shows up in lowercase."
+        ],
+        "when": "moderated"
+      },
+      {
+        "title": "Chat",
+        "when": "off",
+        "items": [
+          "Text chat is turned off for everyone, so nobody can send messages in the world.",
+          "Signs, books and pet names are still allowed. Keep them friendly, and never write private things like your last name, address, school or phone number.",
+          "Want to plan a build together? Do it with your grown-up's help, or on a game night with Eric."
         ]
       },
       {
@@ -257,26 +277,48 @@
     "ladder": [
       {
         "title": "Blocked message",
-        "text": "The message isn't sent, and the bot tells you why in a note only you can see. Say it another way."
+        "text": "The message isn't sent, and the bot tells you why in a note only you can see. Say it another way.",
+        "when": "moderated"
       },
       {
         "title": "Strike",
-        "text": "Swear words and mean words count as a strike. After 2 strikes you get a warning."
+        "text": "Swear words and mean words count as a strike. After 2 strikes you get a warning.",
+        "when": "moderated"
       },
       {
         "title": "Chat off for 10 minutes",
-        "text": "3 strikes in 15 minutes turns your chat off for 10 minutes. You can keep playing and building."
+        "text": "3 strikes in 15 minutes turns your chat off for 10 minutes. You can keep playing and building.",
+        "when": "moderated"
       },
       {
         "title": "Serious message",
-        "text": "Telling someone to hurt themselves turns chat off right away, and Eric is told."
+        "text": "Telling someone to hurt themselves turns chat off right away, and Eric is told.",
+        "when": "moderated"
+      },
+      {
+        "when": "off",
+        "title": "Reminder",
+        "text": "Eric or your grown-up reminds you of the rule. Most mix-ups end here."
+      },
+      {
+        "when": "off",
+        "title": "Fix it",
+        "text": "If you broke or took something, help put it back. Eric can also roll the world back to last night's backup."
+      },
+      {
+        "when": "off",
+        "title": "Time out",
+        "text": "If it keeps happening, you take a short break from the server."
       },
       {
         "title": "Talk with your grown-up",
         "text": "If problems keep happening, or someone wrecks other people's builds, Eric talks with your grown-up and you may take a break from the server."
       }
     ],
-    "mistakes": "If the bot blocks something that was fine, tell Eric what you typed. He can teach the bot that word is okay. If anything in the world makes you feel uncomfortable, stop playing and tell your grown-up and Eric. You won't be in trouble for telling."
+    "mistakes": {
+      "moderated": "If the bot blocks something that was fine, tell Eric what you typed. He can teach the bot that word is okay. If anything in the world makes you feel uncomfortable, stop playing and tell your grown-up and Eric. You won't be in trouble for telling.",
+      "off": "If anything in the world makes you feel uncomfortable, stop playing and tell your grown-up and Eric. You won't be in trouble for telling."
+    }
   },
   "events": [
     {
@@ -310,5 +352,6 @@
     "races": []
   },
   "hall_of_champions": [],
-  "_hall_help": "Past winners, newest first: {\"event\": \"Mario Kart 64 Cup\", \"date\": \"2026-10-23\", \"champion\": \"nickname\"}"
+  "_hall_help": "Past winners, newest first: {\"event\": \"Mario Kart 64 Cup\", \"date\": \"2026-10-23\", \"champion\": \"nickname\"}",
+  "_chat_help": "Items in rules, rulebook.chapters, chapter items and rulebook.ladder can be {\"text\": \"...\", \"when\": \"moderated\"} or {\"when\": \"off\"}. The page shows the right ones automatically from the live chat state. Plain strings always show."
 }

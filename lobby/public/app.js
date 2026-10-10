@@ -43,6 +43,23 @@
 
   // ---------- config → page ----------
 
+  // Chat mode from the live status: "moderated" (Chat Guard running) or "off".
+  // Config items can carry "when": "moderated" | "off"; plain strings always show.
+  var chatMode = "off";
+  function fits(item) {
+    return !(item && typeof item === "object" && item.when) || item.when === chatMode;
+  }
+  function textOf(item) {
+    return item && typeof item === "object" ? (item.text || "") : item;
+  }
+  function setChatMode(mc) {
+    var mode = mc && mc.chat === "moderated" ? "moderated" : "off";
+    var changed = mode !== chatMode;
+    chatMode = mode;
+    document.documentElement.dataset.chat = mode;
+    return changed;
+  }
+
   function applyConfig(cfg) {
     config = cfg || {};
 
@@ -82,27 +99,28 @@
     clear(chapters);
     clear(ladder);
 
-    (book.chapters || []).forEach(function (ch, i) {
+    (book.chapters || []).filter(fits).forEach(function (ch, i) {
       var art = el("article", "chapter");
       art.style.setProperty("--chapter", CHAPTER_COLORS[i % CHAPTER_COLORS.length]);
       art.appendChild(el("h3", null, ch.title || ""));
       var ul = el("ul");
-      (ch.items || []).forEach(function (item) { ul.appendChild(el("li", null, item)); });
+      (ch.items || []).filter(fits).forEach(function (item) { ul.appendChild(el("li", null, textOf(item))); });
       art.appendChild(ul);
       chapters.appendChild(art);
     });
 
-    (book.ladder || []).forEach(function (step) {
+    var steps = (book.ladder || []).filter(fits);
+    ladder.parentNode.hidden = !steps.length;
+    steps.forEach(function (step) {
       var li = el("li");
       li.appendChild(el("p", "ladder-title", step.title || ""));
       if (step.text) li.appendChild(el("p", "ladder-text", step.text));
       ladder.appendChild(li);
     });
 
-    if (book.mistakes) {
-      mistakes.textContent = book.mistakes;
-      mistakes.hidden = false;
-    }
+    var note = book.mistakes && typeof book.mistakes === "object" ? book.mistakes[chatMode] : book.mistakes;
+    mistakes.textContent = note || "";
+    mistakes.hidden = !note;
     wrap.hidden = !(book.chapters && book.chapters.length) && !(book.ladder && book.ladder.length);
   }
 
@@ -383,7 +401,7 @@
   function renderRules(rules) {
     var list = document.getElementById("rules-list");
     clear(list);
-    rules.forEach(function (r) { list.appendChild(el("li", null, r)); });
+    rules.filter(fits).forEach(function (r) { list.appendChild(el("li", null, textOf(r))); });
   }
 
   // ---------- live status ----------
@@ -412,7 +430,7 @@
         : mc.players + (mc.players === 1 ? " person is" : " people are") + " playing" +
           (mc.max_players ? " (room for " + mc.max_players + ")." : ".");
       var chat = mc.chat === "moderated" ? " Chat is moderated."
-        : mc.chat === "off" ? " Chat is off today; building still works." : "";
+        : mc.chat === "off" ? " Chat is off; building together works as usual." : "";
       setStation("station-mc", true, "Open now", playing + chat);
     } else {
       setStation("station-mc", false, "Offline right now",
@@ -449,7 +467,8 @@
         return r.json();
       })
       .then(function (data) {
-        if (firstLoad || JSON.stringify(data.config) !== JSON.stringify(config)) {
+        var modeChanged = setChatMode(data.minecraft);
+        if (firstLoad || modeChanged || JSON.stringify(data.config) !== JSON.stringify(config)) {
           applyConfig(data.config || {});
         }
         firstLoad = false;

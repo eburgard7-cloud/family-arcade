@@ -944,3 +944,9 @@ details[open] > summary::after { transform: translateY(-30%) rotate(225deg); }
   .switch-head { gap: 10px; }
   .device { width: 44px; height: 30px; }
 }
+
+/* Wording that depends on whether chat is moderated or off (set by app.js from /api/status).
+   Until the status says "moderated", the chat-off wording shows. */
+[data-chat-mode="moderated"] { display: none !important; }
+:root[data-chat="moderated"] [data-chat-mode="moderated"] { display: revert !important; }
+:root[data-chat="moderated"] [data-chat-mode="off"] { display: none !important; }

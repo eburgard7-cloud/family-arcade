@@ -94,7 +94,7 @@
     <section id="minecraft" class="section wrap" aria-labelledby="mc-title">
       <div class="section-head">
         <h2 id="mc-title">Join the Minecraft world</h2>
-        <p>Set up for Nintendo Switch and Switch&nbsp;2. Computers, phones and tablets can join too. Text chat in the world is checked by a moderator bot.</p>
+        <p>Set up for Nintendo Switch and Switch&nbsp;2. Computers, phones and tablets can join too. <span data-chat-mode="moderated">Text chat in the world is checked by a moderator bot.</span><span data-chat-mode="off">Text chat is turned off, so it's all about building and exploring together.</span></p>
       </div>
 
       <article class="switch-card" aria-labelledby="switch-title">
@@ -193,7 +193,7 @@
       <div class="help">
         <h3>If something goes wrong</h3>
         <dl class="faq">
-          <div>
+          <div data-chat-mode="moderated">
             <dt>"That message wasn't sent"</dt>
             <dd>The chat moderator stopped it. It blocks swear words, mean words, links, and private things like addresses, phone numbers and schools. Say it another way. If you get a few in a row, your chat turns off for 10 minutes, but you can keep playing.</dd>
           </div>
@@ -339,7 +339,8 @@
         <details>
           <summary>Who can get into the Minecraft world?</summary>
           <p>Only people on the guest list. Every player has to be added by gamertag first, so someone who finds the address still can't get in. Players can't use cheats or change world settings.</p>
-          <p>There's no voice chat in the world, only text chat, so the cousins can talk while they build.</p>
+          <p data-chat-mode="moderated">There's no voice chat in the world, only text chat, so the cousins can talk while they build.</p>
+          <p data-chat-mode="off">There's no voice chat, and text chat is turned off, so players can't send each other messages. The cousins play together by building side by side.</p>
         </details>
 
         <details>
@@ -364,7 +365,14 @@
           <p>While it's set, the Switch looks up internet addresses through that service on that Wi-Fi network. You can set DNS Settings back to <b>Automatic</b> any time. You'll just need to change it again before joining the world from home.</p>
         </details>
 
-        <details>
+        <details data-chat-mode="off">
+          <summary>Why chat is turned off</summary>
+          <p>Text chat in the world is switched off for everyone. Nobody can send messages, and private messages are off too, so there's nothing for a stranger or a cousin to type at your child.</p>
+          <p>The plan is to turn chat back on with a moderator bot that blocks swearing, mean words, links and personal details before anyone sees them. Until that's ready and tested, chat stays off. <span data-bind="host_name">Eric</span> will tell you before it changes.</p>
+          <p>Only invited players can join, and players can't use cheats or change world settings. Please keep talking with your child about who they play with and what they share online.</p>
+        </details>
+
+        <details data-chat-mode="moderated">
           <summary>How chat is kept safe</summary>
           <p>A moderator bot reads every chat message before anyone else sees it. It stops messages with swearing, mean words, links, or personal details like addresses, phone numbers, emails, schools and last names, and private one-to-one messages are turned off so everything is said in the open.</p>
           <p>A player who sends several blocked messages in a short time has their chat turned off for 10 minutes; they can keep playing. Serious messages turn chat off right away and alert <span data-bind="host_name">Eric</span>.</p>
