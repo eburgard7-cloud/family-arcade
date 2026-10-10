@@ -649,6 +649,7 @@ Automatic. `mc-nightly` turns it on before the 4 AM stop and off once Chat Guard
 
 | Task | Command / place |
 |---|---|
+| Fix the geoblock on the other sites (one time) | `scripts/caddy-fix-geoblock.sh` |
 | Get updates from GitHub | User Scripts → `arcade-update` (or `scripts/arcade-update.sh`) |
 | Install add-ons (mods) | copy `.mcpack`/`.mcaddon` to `\\192.168.0.128\data\minecraft-packs` → User Scripts → `mc-packs` |
 | List / remove add-ons | `scripts/mc-packs.sh list` / `scripts/mc-packs.sh remove "Name"` |

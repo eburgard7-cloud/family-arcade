@@ -141,8 +141,7 @@ nano /mnt/user/appdata/stack/caddy/Caddyfile
 ```
 1. Go to the bottom and paste everything from `caddy/play.Caddyfile`, starting at `play.finsonly.net {`.
 2. Replace `PASTE_HASH_HERE` with the hash. **Caddy won't reload while the placeholder is still there.**
-3. Copy the geoblock and crowdsec lines from your jellyfin block into the marked spot.
-4. Save and exit: Ctrl+O, Enter, Ctrl+X.
+3. Save and exit: Ctrl+O, Enter, Ctrl+X. (The block already has the same geoblock and CrowdSec as jellyfin.)
 
 Then reload Caddy:
 ```
@@ -150,7 +149,7 @@ docker exec caddy caddy reload --config /etc/caddy/Caddyfile
 ```
 **Check:** on your phone with **Wi-Fi off**, open `https://play.finsonly.net`. The lights sweep on, Minecraft shows Open, and the Game room shows Closed with Kart night on Oct 23.
 
-If the reload complains about `basic_auth`, change it to `basicauth`. If the page won't load, run this, then reload again:
+If it says "stale file handle", the file was replaced rather than edited (`sed -i` does that): run `docker restart caddy` instead. If the reload complains about `basic_auth`, change it to `basicauth`. If the page won't load, run this, then reload again:
 ```
 docker network connect proxy caddy && docker restart caddy
 ```
