@@ -61,6 +61,12 @@ services:
       VIEW_DISTANCE: "16"
       TICK_DISTANCE: "4"
       CHAT_RESTRICTION: "Disabled"   # no moderator running, so no chat
+      # BDS 1.26.50+ defaults to NetherNet, which doesn't answer on UDP 19132 and only
+      # advertises LAN addresses, so players outside the house can't join (Mojang bug
+      # BDS-23108). RakNet is the classic single-UDP-port transport: works with the
+      # router's UDP 19132 forward and with BedrockConnect. The "TRANSPORT TYPE ERROR"
+      # line it logs at startup is harmless.
+      TRANSPORT: "raknet"
       STOP_SERVER_ANNOUNCE_DELAY: "10"
     volumes:
       - /mnt/user/appdata/arcade/minecraft-fallback:/data
