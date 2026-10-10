@@ -9,7 +9,10 @@
 . /mnt/user/appdata/arcade/scripts/lib.sh
 set -uo pipefail
 
-UNMINED="$ARCADE/tools/unmined-cli/unmined-cli"
+# Wherever the tarball unpacked under tools/ (with or without a top folder).
+UNMINED=$(find "$ARCADE/tools" -maxdepth 3 -type f -name unmined-cli 2>/dev/null | head -n 1)
+UNMINED=${UNMINED:-$ARCADE/tools/unmined-cli/unmined-cli}
+[ -f "$UNMINED" ] && [ ! -x "$UNMINED" ] && chmod +x "$UNMINED"
 WORK="$ARCADE/map-work"
 OUT="$ARCADE/map"
 BK="/mnt/user/backups/minecraft"
