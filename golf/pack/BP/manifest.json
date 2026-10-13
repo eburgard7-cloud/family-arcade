@@ -1,0 +1,64 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Finsonly Golf",
+    "description": "Mario-style golf with a course builder and famous holes. Behavior pack.",
+    "uuid": "6b12fd64-ac7c-42fd-8130-b2664d67c522",
+    "version": [
+      0,
+      1,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      26,
+      10
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "cfd5c3b7-e2cd-4d52-8280-f4b04951ad54",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "ba884352-e1df-4b75-b453-1c98d6c4f6a1",
+      "version": [
+        0,
+        1,
+        0
+      ],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "63cc8ebf-6e7e-404c-8054-fe05243f0c0f",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.6.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "2.0.0"
+    }
+  ],
+  "metadata": {
+    "authors": [
+      "Eric"
+    ],
+    "product_type": "addon"
+  }
+}

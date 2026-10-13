@@ -1,0 +1,43 @@
+{
+  "format_version": [
+    1,
+    1,
+    0
+  ],
+  "golf:turf_tee_a": {
+    "sound": "grass"
+  },
+  "golf:turf_tee_b": {
+    "sound": "grass"
+  },
+  "golf:turf_fairway_a": {
+    "sound": "grass"
+  },
+  "golf:turf_fairway_b": {
+    "sound": "grass"
+  },
+  "golf:turf_fringe": {
+    "sound": "grass"
+  },
+  "golf:turf_green_a": {
+    "sound": "grass"
+  },
+  "golf:turf_green_b": {
+    "sound": "grass"
+  },
+  "golf:turf_rough": {
+    "sound": "grass"
+  },
+  "golf:turf_deep_rough": {
+    "sound": "grass"
+  },
+  "golf:bunker_sand": {
+    "sound": "sand"
+  },
+  "golf:cart_path": {
+    "sound": "stone"
+  },
+  "golf:cup": {
+    "sound": "grass"
+  }
+}

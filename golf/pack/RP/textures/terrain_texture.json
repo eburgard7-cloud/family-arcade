@@ -1,0 +1,62 @@
+{
+  "resource_pack_name": "finsonly_golf",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "golf_fairway_a": {
+      "textures": "textures/blocks/golf_fairway_a"
+    },
+    "golf_fairway_b": {
+      "textures": "textures/blocks/golf_fairway_b"
+    },
+    "golf_tee_a": {
+      "textures": "textures/blocks/golf_tee_a"
+    },
+    "golf_tee_b": {
+      "textures": "textures/blocks/golf_tee_b"
+    },
+    "golf_green_a": {
+      "textures": "textures/blocks/golf_green_a"
+    },
+    "golf_green_b": {
+      "textures": "textures/blocks/golf_green_b"
+    },
+    "golf_fringe": {
+      "textures": "textures/blocks/golf_fringe"
+    },
+    "golf_rough": {
+      "textures": "textures/blocks/golf_rough"
+    },
+    "golf_deep_rough": {
+      "textures": "textures/blocks/golf_deep_rough"
+    },
+    "golf_bunker": {
+      "textures": "textures/blocks/golf_bunker"
+    },
+    "golf_path": {
+      "textures": "textures/blocks/golf_path"
+    },
+    "golf_path_side": {
+      "textures": "textures/blocks/golf_path_side"
+    },
+    "golf_dirt": {
+      "textures": "textures/blocks/golf_dirt"
+    },
+    "golf_side_fairway": {
+      "textures": "textures/blocks/golf_side_fairway"
+    },
+    "golf_side_tee": {
+      "textures": "textures/blocks/golf_side_tee"
+    },
+    "golf_side_green": {
+      "textures": "textures/blocks/golf_side_green"
+    },
+    "golf_side_rough": {
+      "textures": "textures/blocks/golf_side_rough"
+    },
+    "golf_cup": {
+      "textures": "textures/blocks/golf_cup"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.golf.pin",
+        "texture_width": 32,
+        "texture_height": 32,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 4,
+        "visible_bounds_offset": [
+          0,
+          1.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "pole",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -0.5,
+                0,
+                -0.5
+              ],
+              "size": [
+                1,
+                40,
+                1
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "flag",
+          "parent": "pole",
+          "pivot": [
+            0,
+            40,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0.5,
+                31,
+                -0.25
+              ],
+              "size": [
+                12,
+                9,
+                0.5
+              ],
+              "uv": [
+                4,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

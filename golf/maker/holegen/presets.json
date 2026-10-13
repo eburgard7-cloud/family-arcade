@@ -1,0 +1,30 @@
+{
+  "_help": "Famous holes the generator can build. near = a point within ~3 km of the hole; course_match = regex on the OSM golf course name; hole = the hole number (OSM golf=hole ref). water_level = meters above sea level below which terrain becomes water (oceans, Lake Michigan); null = only mapped water. dem = usgs (US 1 m lidar) or copernicus (worldwide 30 m). trees = pine | oak | cypress | mixed | links (almost none).",
+  "holes": [
+    {
+      "id": "sawgrass17", "name": "Island Green", "course": "TPC Sawgrass (Stadium)", "hole": "17",
+      "course_match": "Stadium|TPC Sawgrass|Sawgrass", "near": [30.1980, -81.3945], "dem": "usgs",
+      "water_level": null, "trees": "pine", "margin": 45
+    },
+    {
+      "id": "augusta12", "name": "Golden Bell", "course": "Augusta National", "hole": "12",
+      "course_match": "Augusta National", "near": [33.5005, -82.0225], "dem": "usgs",
+      "water_level": null, "trees": "pine", "margin": 50
+    },
+    {
+      "id": "pebble7", "name": "Ocean Par 3", "course": "Pebble Beach Golf Links", "hole": "7",
+      "course_match": "Pebble Beach Golf Links|Pebble Beach", "near": [36.5650, -121.9465], "dem": "usgs",
+      "water_level": 0.8, "trees": "cypress", "margin": 45
+    },
+    {
+      "id": "straits17", "name": "Pinched Nerve", "course": "Whistling Straits (Straits)", "hole": "17",
+      "course_match": "Straits|Whistling Straits", "near": [43.8545, -87.7340], "dem": "usgs",
+      "water_level": 177.2, "trees": "links", "margin": 45
+    },
+    {
+      "id": "standrews18", "name": "Tom Morris", "course": "St Andrews Old Course", "hole": "18",
+      "course_match": "Old Course", "near": [56.3433, -2.8030], "dem": "copernicus",
+      "water_level": 0.5, "trees": "links", "margin": 40
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "golf:pin",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/golf/pin"
+      },
+      "geometry": {
+        "default": "geometry.golf.pin"
+      },
+      "render_controllers": [
+        "controller.render.golf_default"
+      ]
+    }
+  }
+}

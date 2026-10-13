@@ -1,0 +1,35 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "golf:turf_fairway_b",
+      "menu_category": {
+        "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.6
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 1
+      },
+      "minecraft:map_color": "#4fa337",
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "golf_side_fairway",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "golf_fairway_b",
+          "render_method": "opaque"
+        },
+        "down": {
+          "texture": "golf_dirt",
+          "render_method": "opaque"
+        }
+      }
+    }
+  }
+}

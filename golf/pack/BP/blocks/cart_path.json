@@ -1,0 +1,35 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "golf:cart_path",
+      "menu_category": {
+        "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 1
+      },
+      "minecraft:map_color": "#8f8f8a",
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "golf_path_side",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "golf_path",
+          "render_method": "opaque"
+        },
+        "down": {
+          "texture": "golf_dirt",
+          "render_method": "opaque"
+        }
+      }
+    }
+  }
+}

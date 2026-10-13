@@ -18,3 +18,8 @@ __pycache__/
 *.pyc
 *.tar.gz
 *.partial
+
+# Golf pack build output and hole-generator cache
+golf/dist/
+golf/.holegen-cache/
+golf/pack/BP/structures/

@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "golf:club_rack",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/golf/rack"
+      },
+      "geometry": {
+        "default": "geometry.golf.rack"
+      },
+      "render_controllers": [
+        "controller.render.golf_default"
+      ]
+    }
+  }
+}

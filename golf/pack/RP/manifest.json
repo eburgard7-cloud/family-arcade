@@ -1,0 +1,39 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Finsonly Golf Resources",
+    "description": "Textures, models and effects for Finsonly Golf.",
+    "uuid": "63cc8ebf-6e7e-404c-8054-fe05243f0c0f",
+    "version": [
+      0,
+      1,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      26,
+      10
+    ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "2f0e4f7c-5b1e-4d3a-9c77-0a6a2b1f5e10",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "6b12fd64-ac7c-42fd-8130-b2664d67c522",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "golf:tee_marker",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "blue": "textures/entity/golf/tee_blue",
+        "white": "textures/entity/golf/tee_white",
+        "red": "textures/entity/golf/tee_red",
+        "gold": "textures/entity/golf/tee_gold"
+      },
+      "geometry": {
+        "default": "geometry.golf.tee"
+      },
+      "render_controllers": [
+        "controller.render.golf_tee"
+      ]
+    }
+  }
+}

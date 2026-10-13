@@ -1,0 +1,15 @@
+{
+  "resource_pack_name": "finsonly_golf",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "golf_club": {
+      "textures": "textures/items/golf_club"
+    },
+    "golf_wand": {
+      "textures": "textures/items/golf_wand"
+    },
+    "golf_brush": {
+      "textures": "textures/items/golf_brush"
+    }
+  }
+}
